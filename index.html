@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- tailwind and daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/f811dd765f.js" crossorigin="anonymous"></script>
+
+    <!-- tailwind.config.js -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1dd100',
+                        primaryBg: "rgb(180, 244, 97)",
+                        secondary: '#030712',
+                        couponOne: '#ffbf0f',
+                        couponTwo: '#f78c9c',
+                        mobileMenu: '#f7f8f8',
+                        body: '#03071299',
+                        buttonColor: 'rgba(29, 209, 0, 0.15)',
+                    },
+                    fontFamily: {
+                        RaleWay: 'Raleway',
+                        Inter: 'Inter',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body>
+    <!-- header section -->
+
+    <!-- navbar -->
+    <nav class="flex justify-between p-5">
+        <!-- blog btn -->
+        <div>
+            <h2
+                class="text-black font-bold sm:text-2xl text-lg bg-primaryBg rounded-lg sm:px-4 sm:py-3 md:px-5 md:py-4">
+                Blog</h2>
+        </div>
+
+
+
+        <!-- logo -->
+        <div class="flex justify-center items-center gap-3">
+            <div class=""><img width="30" src="./assets/logo.png" alt=""></div>
+            <h2 class="text-black font-bold sm:text-2xl text-lg">Donate Bangladesh</h2>
+
+        </div>
+
+
+
+        <!-- total BDT -->
+        <div class="flex justify-center items-center gap-3">
+            <img width="sm:35 md:40" src="./assets/coin.png" alt="">
+            <h3 id="usersTotalTk" class="text-black font-bold sm:text-2xl text-lg">5500 BDT</h3>
+        </div>
+
+
+
+
+    </nav>
+
+    <!-- main section -->
+    <section>
+        <!-- toggle buttons -->
+        <div class="flex justify-center mt-12 gap-5">
+            <a id="donationBtn"
+                class="flex justify-center text-black px-8 py-3 bg-primaryBg rounded-lg font-semibold text-lg border"
+                href="">Donation</a>
+
+            <a id="historyBtn" class="flex justify-center text-black px-8 py-3 border rounded-lg font-semibold text-lg"
+                href="">History</a>
+
+        </div>
+        <!-- Donation Cards -->
+        <div id="donation" class="">
+            <div class="sm:flex sm:flex-col justify-between p-5 gap-5 my-8 mx-5">
+                <!-- cards-1 -->
+                <div class="sm:flex sm:flex-col md:flex md:flex-row p-5 gep-4 lg:gap-8 border rounded-lg ">
+                    <!-- img section -->
+                    <div class="w-full">
+                        <img class="w-full h-full overflow-hidden bg-center bg-no-repeat bg-cover rounded-2xl"
+                            src="./assets/noakhali.png" alt="">
+                    </div>
+    
+    
+                    <!-- content section -->
+                    <div class="flex flex-col gap-2">
+                        <!-- tk -->
+                        <div class="flex md:justify-start items-center gap-2 mt-3">
+                            <img width="sm:25 md:30" src="./assets/coin.png" alt="">
+                            <h3 id="noakhali" class="text-black font-bold text-xl">0 BDT</h3>
+    
+                        </div>
+                        <!-- heading -->
+                        <h1 class=" text-black py-2 font-bold text-2xl">Donate for flood at Noakhali, Bangladesh</h1>
+                        <!-- paragraph -->
+                        <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo culpa tenetur
+                            facere earum harum corrupti magnam, quam eum enim reiciendis adipisci eaque recusandae quaerat
+                            sunt? Pariatur voluptas praesentium aspernatur soluta.
+                            Molestiae error voluptatibus consequatur repellendus hic cumque corporis a maiores, quas
+                            consectetur dicta esse blanditiis praesentium ad. Consequuntur sit quaerat adipisci quos minima
+                            praesentium</p>
+                        <!-- input field -->
+    
+                        <input id="donate-noakhali" class="border w-full p-4 my-2 rounded-lg" type="text" placeholder="Write Donation amount">
+                        <!-- button -->
+                        <div class="w-full h-full">
+                            <button id="noakhaliDonate"
+                                class="flex-1 justify-center text-black w-full py-3 bg-primaryBg rounded-lg font-semibold text-lg border">Donate
+                                Now</button>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+    
+    
+                <!-- cards-2 -->
+                <div class="flex sm:flex-col  md:flex md:flex-row p-5 gep-4 lg:gap-8  border rounded-lg ">
+                    <!-- img section -->
+                    <div class="w-full">
+                        <img class="w-full h-full overflow-hidden bg-center bg-no-repeat bg-cover rounded-2xl"
+                            src="./assets/feni.png" alt="">
+                    </div>
+    
+    
+                    <!-- content section -->
+                    <div class="flex flex-col gap-2">
+                        <!-- tk -->
+                        <div class="flex md:justify-start items-center gap-3 mt-3">
+                            <img width="sm:25 md:30" src="./assets/coin.png" alt="">
+                            <h3 id="" class="text-black font-bold text-xl">0 BDT</h3>
+                        </div>
+                        <!-- heading -->
+                        <h1 class=" text-black py-2 font-bold text-2xl">Donate for flood at Noakhali, Bangladesh</h1>
+                        <!-- paragraph -->
+                        <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo culpa tenetur
+                            facere earum harum corrupti magnam, quam eum enim reiciendis adipisci eaque recusandae quaerat
+                            sunt? Pariatur voluptas praesentium aspernatur soluta.
+                            Molestiae error voluptatibus consequatur repellendus hic cumque corporis a maiores, quas
+                            consectetur dicta esse blanditiis praesentium ad. Consequuntur sit quaerat adipisci quos minima
+                            praesentium</p>
+                        <!-- input field -->
+    
+                        <input class="border w-full p-4 my-2 rounded-lg" type="text" placeholder="Write Donation amount">
+                        <!-- button -->
+                        <div class="w-full h-full">
+                            <button
+                                class="flex-1 justify-center text-black w-full py-3 bg-primaryBg rounded-lg font-semibold text-lg border">Donate
+                                Now</button>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+    
+    
+                <!-- cards-3 -->
+                <div class="flex sm:flex-col md:flex md:flex-row p-5 gep-4 lg:gap-8 border rounded-lg ">
+                    <!-- img section -->
+                    <div class="w-full">
+                        <img class="w-full h-full overflow-hidden bg-center bg-no-repeat bg-cover rounded-2xl"
+                            src="./assets/quota-protest.png" alt="">
+                    </div>
+    
+    
+                    <!-- content section -->
+                    <div class="flex flex-col gap-2">
+                        <!-- tk -->
+                        <div class="flex md:justify-start items-center gap-3 mt-3">
+                            <img width="sm:25 md:30" src="./assets/coin.png" alt="">
+                            <h3 class="text-black font-bold text-xl">0 BDT</h3>
+                        </div>
+                        <!-- heading -->
+                        <h1 class=" text-black py-2 font-bold text-2xl">Donate for flood at Noakhali, Bangladesh</h1>
+                        <!-- paragraph -->
+                        <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo culpa tenetur
+                            facere earum harum corrupti magnam, quam eum enim reiciendis adipisci eaque recusandae quaerat
+                            sunt? Pariatur voluptas praesentium aspernatur soluta.
+                            Molestiae error voluptatibus consequatur repellendus hic cumque corporis a maiores, quas
+                            consectetur dicta esse blanditiis praesentium ad. Consequuntur sit quaerat adipisci quos minima
+                            praesentium</p>
+                        <!-- input field -->
+    
+                        <input class="border w-full p-4 my-2 rounded-lg" type="text" placeholder="Write Donation amount">
+                        <!-- button -->
+                        <div class="w-full h-full">
+                            <button
+                                class="flex-1 justify-center text-black w-full py-3 bg-primaryBg rounded-lg font-semibold text-lg border">Donate
+                                Now</button>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+    
+    
+            </div>
+        </div>
+
+        <!-- history -->
+        <div id="history" class="hidden">
+            <div>
+                <div class="flex">
+                    <h1>1000 tk is donated for famine-2024</h1>
+                    <p>Date:</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <script src="./app.js"></script>
+    <script src="./donatemoney.js"></script>
+
+</body>
+
+</html>
