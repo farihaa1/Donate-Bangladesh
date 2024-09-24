@@ -90,10 +90,9 @@ document.addEventListener("DOMContentLoaded",
             const usersTotalIk = parseFloat(usersTotal);
 
             const donationTk = parseFloat(donationInputValue);
-            const usersTotalMoney = usersTotalIk - donationTk;
 
             // validation
-            if (isNaN(donationTk) || donationTk <= 0 || usersTotalMoney < 0) {
+            if (isNaN(donationTk) || donationTk <= 0 || usersTotalIk < donationTk) {
                 return false;
             }
 
@@ -141,10 +140,9 @@ document.addEventListener("DOMContentLoaded",
             const donationTk = parseFloat(donationInputValue);
             const usersTotal = document.getElementById('usersTotalTk').innerText;
             const usersTotalIk = parseFloat(usersTotal);
-            const usersTotalMoney = usersTotalIk - donationTk;
 
             // validation
-            if (isNaN(donationTk) || donationTk <= 0 || usersTotalMoney <= 0) {
+            if (isNaN(donationTk) || donationTk <= 0 || usersTotalIk < donationTk) {
 
                 return;
             }
@@ -152,15 +150,7 @@ document.addEventListener("DOMContentLoaded",
         }
 
         document.getElementById('close').addEventListener('click', function () {
-            const donationTk = parseFloat(donationInputValue);
-            const usersTotal = document.getElementById('usersTotalTk').innerText;
-            const usersTotalIk = parseFloat(usersTotal);
-
-            // validation
-            if (isNaN(donationTk) || donationTk <= 0 || usersTotalIk < 0) {
-
-                return;
-            }
+            
             document.getElementById('popUp').classList.add('hidden');
         });
 
