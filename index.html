@@ -23,6 +23,9 @@
         .font-lexend {
             font-family: "Lexend";
         }
+        
+        
+
     </style>
 
     <!-- tailwind.config.js -->
@@ -33,16 +36,8 @@
                     colors: {
                         primary: '#1dd100',
                         primaryBg: "rgb(180, 244, 97)",
-                        secondary: '#030712',
-                        couponOne: '#ffbf0f',
-                        couponTwo: '#f78c9c',
-                        mobileMenu: '#f7f8f8',
-                        body: '#03071299',
-                        buttonColor: 'rgba(29, 209, 0, 0.15)',
-                    },
-                    fontFamily: {
-                        RaleWay: 'Raleway',
-                        Inter: 'Inter',
+                        secondary: 'rgba(17, 17, 17, 0.05)',
+                        
                     },
                 },
             },
@@ -54,31 +49,47 @@
     <!-- header section -->
 
     <!-- navbar -->
-    <nav class="flex justify-between p-5 container mx-auto max-w-screen-lg ">
-        <!-- blog btn -->
-        <div>
-            <a href="blog.html">
-                <h2 class="text-black font-bold sm:text-2xl text-lg bg-primaryBg rounded-lg px-4 py-3 md:px-5 md:py-4">
-                    Blog</h2>
-            </a>
-        </div>
-
-
-
-        <!-- logo -->
-        <div class="flex justify-center items-center gap-3">
-            <div class=""><img width="30" src="./assets/logo.png" alt=""></div>
-            <h2 class="text-black font-bold sm:text-2xl text-lg">Donate Bangladesh</h2>
-
-        </div>
-
-
-
-        <!-- total BDT -->
-        <div class="flex justify-center items-center gap-3">
-            <img width="35 md:40" src="./assets/coin.png" alt="">
-            <h3 id="usersTotalTk" class="text-black font-bold sm:text-2xl text-lg">5500 BDT</h3>
-        </div>
+    <nav class="sticky top-0 overflow-hidden  z-10  backdrop-filter backdrop-blur-lg border-b">
+       
+        <section class="bg-gradient-to-b from-[#fcedd0] to-[rgba(17, 17, 17, 0.05)] backdrop-">
+             <!-- blog btn -->
+            <div class="flex justify-between py-4 px-2 container mx-auto max-w-screen-lg  ">
+                <div class="">
+                    <a class="btn text-black font-bold sm:text-2xl text-lg bg-primaryBg rounded-lg px-8" href="blog.html">
+                            Blog
+                    </a>
+                </div>
+        
+        
+        
+                <!-- logo -->
+                <div class="flex justify-center items-center gap-3">
+                    <div class=""><img width="30" src="./assets/logo.png" alt=""></div>
+                    <h2 class="text-black font-bold sm:text-2xl text-lg">Donate Bangladesh</h2>
+        
+                </div>
+        
+        
+        
+                <!-- total BDT -->
+                <div class="flex justify-center items-center gap-3">
+                    <img width="35 md:40" src="./assets/coin.png" alt="">
+                    <h3 id="usersTotalTk" class="text-black font-bold sm:text-2xl text-lg">5500 BDT</h3>
+                </div>
+            </div>
+    
+        </section>
+        <section class="mx-auto container lg:w-[90%] mb-5">
+            <div class="flex justify-center mt-8 gap-4">
+                <a id="donationBtn"
+                    class="flex justify-center items-center text-black bg-primaryBg rounded-lg font-semibold text-lg  btn border"
+                    href="">Donation</a>
+    
+                <a id="historyBtn" class="flex justify-center items-center text-black rounded-lg font-semibold text-lg btn border"
+                    href="">History</a>
+    
+            </div>
+        </section>
 
 
 
@@ -89,15 +100,7 @@
 
     <section class="mx-auto container lg:w-[90%] ">
         <!-- toggle buttons -->
-        <div class="flex justify-center mt-12 gap-4">
-            <a id="donationBtn"
-                class="flex justify-center text-black px-8 py-3 bg-primaryBg rounded-lg font-semibold text-lg border"
-                href="">Donation</a>
-
-            <a id="historyBtn" class="flex justify-center text-black px-8 py-3 border rounded-lg font-semibold text-lg"
-                href="">History</a>
-
-        </div>
+        
         <!-- Donation Cards -->
         <div id="donation">
             <div class="flex flex-col md:flex-col justify-between p-5 gap-5 my-8 mx-5">
@@ -113,18 +116,15 @@
                     <!-- content section -->
                     <div class="flex flex-col gap-2 w-full lg:w-[60%]">
                         <!-- tk -->
-                        <div class="flex md:justify-start items-center gap-2 mt-3">
+                        <div class="flex md:justify-start items-center gap-2 px-1 py-2 rounded-lg bg-secondary w-48">
                             <img width="sm:25 md:30" src="./assets/coin.png" alt="">
-                            <h3 id="noakhali" class="text-black font-bold text-xl">0 BDT</h3>
+                            <h3 id="noakhali" class="text-black font-bold text-xl ">0 BDT</h3>
 
                         </div>
                         <!-- heading -->
                         <h1 class=" text-black py-2 font-bold text-2xl">Donate for flood at Noakhali, Bangladesh</h1>
                         <!-- paragraph -->
-                        <p class="text-xl"> The recent floods in Noakhali have caused significant damage to homes
-                            infrastructure. Your donation will help provide essential supplies and to those affected by
-                            this disaster. Every contribution, big or small, makes difference. Please join us in
-                            supporting the relief efforts and making a positive impact on the lives of those in need.
+                        <p class="text-xl"> The recent floods in Noakhali have caused extensive damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, can make a difference. Join us in supporting the relief efforts and making a positive impact on the lives of those in need.
                         </p>
                         <!-- input field -->
 
@@ -155,19 +155,14 @@
                     <!-- content section -->
                     <div class="flex flex-col gap-2 w-full lg:w-[60%]">
                         <!-- tk -->
-                        <div class="flex md:justify-start items-center gap-2 mt-3">
+                        <div class="flex md:justify-start items-center gap-2 px-1 py-2 rounded-lg bg-secondary w-48">
                             <img width="sm:25 md:30" src="./assets/coin.png" alt="">
                             <h3 id="feni" class="text-black font-bold text-xl">0 BDT</h3>
                         </div>
                         <!-- heading -->
                         <h1 class=" text-black py-2 font-bold text-2xl">Donate for Flood Relief in Feni,Bangladesh</h1>
                         <!-- paragraph -->
-                        <p class="text-xl">The recent floods in Feni have devastated local communities, leading to
-                            severe disruption and loss. Your generous donation will help provide immediate aid,
-                            including food, clean water, and medical supplies, to those affected by this calamity.
-                            Together, we can offer crucial support and help rebuild lives in the aftermath of this
-                            disaster. Every contribution counts towards making a real difference. Please consider
-                            donating today to assist those in urgent need.</p>
+                        <p class="text-xl">The recent floods in Feni have devastated local communities, causing severe disruption and loss. Your generous donation will help provide immediate aid, such as food, clean water, and medical supplies, to those affected. Together, we can offer critical support and help rebuild lives in the aftermath of this disaster. Every contribution counts. Please consider donating today to assist those in urgent need.</p>
                         <!-- input field -->
 
                         <input id="donate-feni" class="border w-full p-4 my-2 rounded-lg" type="text"
@@ -197,20 +192,14 @@
                     <!-- content section -->
                     <div class="flex flex-col gap-2 w-full lg:w-[60%]">
                         <!-- tk -->
-                        <div class="flex md:justify-start items-center gap-3 mt-3">
+                        <div class="flex md:justify-start items-center gap-3 px-1 py-2 rounded-lg bg-secondary w-48">
                             <img width="sm:25 md:30" src="./assets/coin.png" alt="">
-                            <h3 id="quota" class="text-black font-bold text-xl">0 BDT</h3>
+                            <h3 id="quota" class="text-black font-bold text-xl ">0 BDT</h3>
                         </div>
                         <!-- heading -->
                         <h1 class=" text-black py-2 font-bold text-2xl">Aid for Injured in the Quota Movement</h1>
                         <!-- paragraph -->
-                        <p class="text-xl">The recent Quota movement has resulted in numerous injuries and significant
-                            hardship for many individuals. Your support is crucial in providing medical assistance,
-                            rehabilitation, and necessary supplies to those affected. By contributing, you help ensure
-                            that injured individuals receive the care and support they need during this challenging
-                            time. Every donation plays a vital role in alleviating their suffering and aiding in their
-                            recovery. Please consider making a donation to support these brave individuals in their time
-                            of need.</p>
+                        <p class="text-xl">The recent Quota movement has left many injured and facing significant hardship. Your support is vital in providing medical assistance, rehabilitation, and essential supplies to those affected. By donating, you help ensure that the injured receive the care they need during this challenging time. Every contribution makes a meaningful difference in alleviating their suffering and aiding in their recovery. Please consider supporting these brave individuals with your donation.</p>
                         <!-- input field -->
 
                         <input id="donate-quota" class="border w-full p-4 my-2 rounded-lg" type="text"
@@ -259,10 +248,15 @@
 
 
 
-    <div id="history" class="hidden ">
+    <div id="history" class="hidden relative">
 
         <div id="div1" class=" container  flex flex-col gap-3 mx-auto  lg:w-[90%]  my-8 rounded-lg"></div>
+        
     </div>
+    <footer class="bottom-0 h-20 bg-[rgb(251,242,225)] absolute"></footer>
+
+    </footer>
+    
 
     <script src="./app.js"></script>
 

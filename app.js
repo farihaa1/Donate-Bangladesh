@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded",
     function () {
 
-      
 
         function toggleSections(showSection, hideSection) {
-            document.getElementById(showSection).classList.toggle('hidden');
-            document.getElementById(hideSection).classList.toggle('hidden');
+            const active = document.getElementById(showSection);
+            const deActive = document.getElementById(hideSection);
+
+            active.classList.remove('hidden');
+            deActive.classList.add('hidden');
 
 
 
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded",
 
         });
 
-        
+
         // Donation logic
 
         function handleDonation(donationInputId, usersTotalId, targetTotalId) {
@@ -50,39 +52,48 @@ document.addEventListener("DOMContentLoaded",
             // current values 
             let usersTotalIkNum = parseFloat(usersTotalIk.innerText.split(" ")[0]);
             let targetTotalIkNum = parseFloat(targetTotalIk.innerText.split(" ")[0]);
+            console.log(usersTotalIkNum);
+
 
             // get donation Input value
             const donationInputValue = document.getElementById(donationInputId).value;
             const donationTk = parseFloat(donationInputValue);
 
-            // input validation
-            if (isNaN(donationTk) || donationTk <= 0 || usersTotalIkNum <= 0) {
-                alert("Invalid donation amount");
-                document.getElementById(donationInputId).value = '';
-                return false;
-            }
 
             // update users total money
             const usersTotalMoney = usersTotalIkNum - donationTk;
             const targetTotalBalance = targetTotalIkNum + donationTk;
 
-            // update on dom
-            usersTotalIk.innerText = `${usersTotalMoney} BDT`;
-            targetTotalIk.innerText = `${targetTotalBalance} BDT`;
-            document.getElementById(donationInputId).value = '';
-            
+            // input validation
+            if (isNaN(donationTk) || donationTk <= 0 || usersTotalMoney < 0) {
+                alert("Invalid donation amount");
+                document.getElementById(donationInputId).value = '';
+                return false;
+            }
+
+            else {
+
+                // update on dom
+                usersTotalIk.innerText = `${usersTotalMoney} BDT`;
+                targetTotalIk.innerText = `${targetTotalBalance} BDT`;
+                document.getElementById(donationInputId).value = '';
+            }
+
 
         }
 
 
         function addElement(donateContent, donationInputValue) {
-            
-            
+
+
+            const usersTotal = document.getElementById('usersTotalTk').innerText;
+            const usersTotalIk = parseFloat(usersTotal);
 
             const donationTk = parseFloat(donationInputValue);
+            const usersTotalMoney = usersTotalIk - donationTk;
 
             // validation
-            if (isNaN(donationTk) || donationTk <= 0) {
+            if (isNaN(donationTk) || donationTk <= 0 || usersTotalMoney < 0) {
                 return false;
             }
 
@@ -97,7 +108,7 @@ document.addEventListener("DOMContentLoaded",
 
             // and give it some content
 
-            newDiv.classList.add("p-5", "my-2", "border", "rounded-xl","w-full", "gap-3");
+            newDiv.classList.add("p-5", "my-2", "border", "rounded-xl", "w-full", "gap-3");
 
             // add the content sections
             const newContent = `
@@ -112,7 +123,7 @@ document.addEventListener("DOMContentLoaded",
             // Append the new div to the history section
 
             const historySection = document.getElementById("div1");
-            
+
             historySection.classList.remove('hidden');
             if (historySection.firstChild) {
                 historySection.insertBefore(newDiv, historySection.firstChild);
@@ -124,29 +135,38 @@ document.addEventListener("DOMContentLoaded",
 
 
 
-         // popup
+        // popup
         function popSection(donationInputValue) {
-           
+
             const donationTk = parseFloat(donationInputValue);
+            const usersTotal = document.getElementById('usersTotalTk').innerText;
+            const usersTotalIk = parseFloat(usersTotal);
+            const usersTotalMoney = usersTotalIk - donationTk;
 
             // validation
-            if (isNaN(donationTk) || donationTk <= 0) {
-                
+            if (isNaN(donationTk) || donationTk <= 0 || usersTotalMoney <= 0) {
+
                 return;
             }
             document.getElementById('popUp').classList.remove('hidden');
         }
 
         document.getElementById('close').addEventListener('click', function () {
+            const donationTk = parseFloat(donationInputValue);
+            const usersTotal = document.getElementById('usersTotalTk').innerText;
+            const usersTotalIk = parseFloat(usersTotal);
+
+            // validation
+            if (isNaN(donationTk) || donationTk <= 0 || usersTotalIk < 0) {
+
+                return;
+            }
             document.getElementById('popUp').classList.add('hidden');
         });
 
 
         // history
 
-
-
-       
 
 
         document.getElementById('noakhaliDonate').addEventListener('click', function (event) {
