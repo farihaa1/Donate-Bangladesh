@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded",
         }
 
 
-
-
         function changeButtonStyles(activeButtonId, inactiveButtonId) {
             const activeButton = document.getElementById(activeButtonId);
             const inactiveButton = document.getElementById(inactiveButtonId);
@@ -45,6 +43,7 @@ document.addEventListener("DOMContentLoaded",
 
         });
 
+        
         // Donation logic
 
         function handleDonation(donationInputId, usersTotalId, targetTotalId) {
@@ -72,14 +71,14 @@ document.addEventListener("DOMContentLoaded",
             // update on dom
             usersTotalIk.innerText = `${usersTotalMoney} BDT`;
             targetTotalIk.innerText = `${targetTotalBalance} BDT`;
+            document.getElementById(donationInputId).value = '';
 
         }
 
-        // history
-
-
 
         function addElement(donateContent, donationInputValue) {
+            
+            
 
             const donationTk = parseFloat(donationInputValue);
 
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded",
 
             // and give it some content
 
-            newDiv.classList.add("p-5", "m-2", "border", "rounded-xl","w-full", "gap-3");
+            newDiv.classList.add("p-5", "my-2", "border", "rounded-xl","w-full", "gap-3");
 
             // add the content sections
             const newContent = `
@@ -126,7 +125,7 @@ document.addEventListener("DOMContentLoaded",
 
 
 
-        // popup
+         // popup
         function popSection() {
             document.getElementById('popUp').classList.remove('hidden');
         }
@@ -136,10 +135,11 @@ document.addEventListener("DOMContentLoaded",
         });
 
 
+        // history
 
 
 
-
+       
 
 
         document.getElementById('noakhaliDonate').addEventListener('click', function (event) {
@@ -171,18 +171,16 @@ document.addEventListener("DOMContentLoaded",
 
         document.getElementById('donateQuota').addEventListener('click', function (event) {
             event.preventDefault();
-
+            const donationInputValue = document.getElementById('donate-quota').value;
+            const donateContentQuota = "aid for the Injured in quota Movement, Bangladesh";
             handleDonation('donate-quota', 'usersTotalTk', 'quota');
 
 
             popSection();
-            const donationInputValue = document.getElementById('donate-quota').value;
-            const donateContentQuota = "aid for the Injured in quota Movement, Bangladesh";
             addElement(donateContentQuota, donationInputValue);
         });
 
 
-        // history elements
 
 
 
