@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded",
-    function (event) {
+    function () {
 
-        event.preventDefault();
+      
 
         function toggleSections(showSection, hideSection) {
-            const active = document.getElementById(showSection);
-            const deActive = document.getElementById(hideSection);
-
-            active.classList.remove('hidden');
-            deActive.classList.add('hidden');
+            document.getElementById(showSection).classList.toggle('hidden');
+            document.getElementById(hideSection).classList.toggle('hidden');
 
 
 
@@ -61,7 +58,8 @@ document.addEventListener("DOMContentLoaded",
             // input validation
             if (isNaN(donationTk) || donationTk <= 0 || usersTotalIkNum <= 0) {
                 alert("Invalid donation amount");
-                return;
+                document.getElementById(donationInputId).value = '';
+                return false;
             }
 
             // update users total money
@@ -72,6 +70,7 @@ document.addEventListener("DOMContentLoaded",
             usersTotalIk.innerText = `${usersTotalMoney} BDT`;
             targetTotalIk.innerText = `${targetTotalBalance} BDT`;
             document.getElementById(donationInputId).value = '';
+            
 
         }
 
@@ -84,8 +83,7 @@ document.addEventListener("DOMContentLoaded",
 
             // validation
             if (isNaN(donationTk) || donationTk <= 0) {
-                alert("Invalid donation amount");
-                return;
+                return false;
             }
 
             // get the current date
@@ -114,19 +112,28 @@ document.addEventListener("DOMContentLoaded",
             // Append the new div to the history section
 
             const historySection = document.getElementById("div1");
-            if (!historySection) {
-                console.error("No history section found");
-                return;
-            }
+            
             historySection.classList.remove('hidden');
-            historySection.appendChild(newDiv);
+            if (historySection.firstChild) {
+                historySection.insertBefore(newDiv, historySection.firstChild);
+            } else {
+                historySection.appendChild(newDiv);
+            }
         }
 
 
 
 
          // popup
-        function popSection() {
+        function popSection(donationInputValue) {
+           
+            const donationTk = parseFloat(donationInputValue);
+
+            // validation
+            if (isNaN(donationTk) || donationTk <= 0) {
+                
+                return;
+            }
             document.getElementById('popUp').classList.remove('hidden');
         }
 
@@ -149,7 +156,7 @@ document.addEventListener("DOMContentLoaded",
 
             handleDonation('donate-noakhali', 'usersTotalTk', 'noakhali');
 
-            popSection();
+            popSection(donationInputValue);
             addElement(donateContentFlood, donationInputValue)
 
 
@@ -163,7 +170,7 @@ document.addEventListener("DOMContentLoaded",
             const donateContentFamine = "for famine-2024 at Feni, Bangladesh";
             handleDonation('donate-feni', 'usersTotalTk', 'feni');
 
-            popSection();
+            popSection(donationInputValue);
             addElement(donateContentFamine, donationInputValue);
 
 
@@ -176,10 +183,9 @@ document.addEventListener("DOMContentLoaded",
             handleDonation('donate-quota', 'usersTotalTk', 'quota');
 
 
-            popSection();
+            popSection(donationInputValue);
             addElement(donateContentQuota, donationInputValue);
         });
-
 
 
 
